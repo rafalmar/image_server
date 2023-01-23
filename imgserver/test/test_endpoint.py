@@ -12,7 +12,7 @@ def test_create_and_get_by_id():
     Tests get by id method
     """
 
-    url = 'http://localhost:8001/api/images/'
+    url = 'http://localhost:8001/images/'
     file = 'testimage.png'
     file = os.path.join(os.path.dirname(__file__), file)
 
@@ -34,7 +34,7 @@ def test_create_and_get_by_id():
     assert all(list(map(lambda x: x in response.json().keys(), ['id', 'title', 'file', 'width', 'height'])))
 
     _id = response.json()['id']
-    url = url + f'{_id}/'
+    url = url + f'{_id}'
     response = requests.get(url)
     assert response.status_code == 200
     assert all(list(map(lambda x: x in response.json().keys(), ['id', 'title', 'file', 'width', 'height'])))
@@ -45,7 +45,7 @@ def test_create_and_get_by_title():
     Tests filtering by part of an image title.
     """
 
-    url = 'http://localhost:8001/api/images/'
+    url = 'http://localhost:8001/images/'
     file = 'testimage.png'
     file = os.path.join(os.path.dirname(__file__), file)
 
@@ -77,7 +77,7 @@ def test_resized():
     Tests if returned image's width and height are equal to requested.
     """
 
-    url = 'http://localhost:8001/api/images/'
+    url = 'http://localhost:8001/images/'
     file = 'testimage.png'
     file = os.path.join(os.path.dirname(__file__), file)
 

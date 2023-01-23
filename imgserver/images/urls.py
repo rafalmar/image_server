@@ -5,5 +5,5 @@ from django.conf import settings
 
 urlpatterns = [
     path('', image_mixin_view),
-    path('<int:pk>/', image_mixin_view)
+    path('<int:pk>', image_mixin_view)
 ]

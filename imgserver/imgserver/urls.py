@@ -17,14 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from rest_framework.schemas import get_schema_view
 from swagger_render.views import SwaggerUIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/images/', include('images.urls')),
+    path('images/', include('images.urls')),
     path('swagger/', SwaggerUIView.as_view())] \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
               + static('/docs/', document_root=settings.DOCS_ROOT)
-
-# path('openapi', get_schema_view(title='Images Api Schema', description="Guide for the REST API"), name='openapi-schema')

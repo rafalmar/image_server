@@ -1,13 +1,19 @@
 openapi: 3.0.2
 info:
-  title: 'API documentation'
+  title: 'Image Server API documentation'
   version: '0.0.1'
 paths:
-  /api/images/:
+  /images/:
     get:
       operationId: retrieveImage
       description: ''
-      parameters: []
+      parameters:
+        - in: query
+          name: title
+          required: false
+          schema:
+            type: string
+          description: Substring of a title to search with
       requestBody:
         content:
           application/json:
@@ -52,7 +58,7 @@ paths:
           description: ''
       tags:
       - api
-  /api/images/{id}/:
+  /images/{id}/:
     get:
       operationId: retrieveImage
       description: ''
