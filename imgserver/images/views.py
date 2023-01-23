@@ -3,7 +3,6 @@ from rest_framework import generics, mixins
 from .serializers import ImageSerializer
 from django.shortcuts import render
 from PIL import Image as PILimage
-from six import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile, UploadedFile
 
 class ImageMixinView(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.RetrieveModelMixin, generics.GenericAPIView):

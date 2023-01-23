@@ -1,0 +1,100 @@
+openapi: 3.0.2
+info:
+  title: 'API documentation'
+  version: '0.0.1'
+paths:
+  /api/images/:
+    get:
+      operationId: retrieveImage
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Image'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createImage
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Image'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Image'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Image'
+      responses:
+        '201':
+          content:
+            application/json:
+              type: array
+              items:
+                  $ref: '#/components/schemas/Image'
+          description: ''
+      tags:
+      - api
+  /api/images/{id}/:
+    get:
+      operationId: retrieveImage
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this image.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
+          description: ''
+      tags:
+      - api
+components:
+  schemas:
+    Image:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 50
+        file:
+          type: string
+          format: binary
+        width:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        height:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+      required:
+      - file

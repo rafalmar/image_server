@@ -16,7 +16,7 @@ def test_create_and_get_by_id():
     file = 'testimage.png'
     file = os.path.join(os.path.dirname(__file__), file)
 
-    title = 'test' + get_random_string(10)
+    title = 'test_' + get_random_string(10)
     width = random.randint(10, 1000)
     height = random.randint(10, 1000)
 
@@ -51,7 +51,7 @@ def test_create_and_get_by_title():
 
     title = get_random_string(20)
     subtitle = title[3:14]  # part of a title, to look for it
-    title = 'test' + title
+    title = 'test_' + title
 
     width = random.randint(10, 1000)
     height = random.randint(10, 1000)
@@ -81,7 +81,7 @@ def test_resized():
     file = 'testimage.png'
     file = os.path.join(os.path.dirname(__file__), file)
 
-    title = 'test' + get_random_string(10)
+    title = 'test_' + get_random_string(10)
     new_width = random.randint(10, 1000)
     new_height = random.randint(10, 1000)
 

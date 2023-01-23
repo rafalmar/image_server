@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'swagger_render'
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 100
 }
+
+DOCS_ROOT = 'docs/'
+# SWAGGER_YAML_FILENAME = os.path.join(DOCS_ROOT, 'openapi-schema.yml')
+SWAGGER_YAML_FILENAME = '/docs/openapi-schema.yml'
+
