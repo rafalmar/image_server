@@ -23,6 +23,9 @@ docker, docker-compose
 It will run django server at localhost:8001 and postgres server at localhost:8002
 Both containers share a volume - an image storage.
 
+### Stop
+`$ make down`
+
 ## Run tests
 Tests are only available locally - when containers run.
 
