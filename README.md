@@ -34,7 +34,7 @@ python 3.10, pip
 
 1. create python virtual environment
 2. cd to cloned directory
-2. `pip install -r requirements.txt`
+2. `pip install -r imgserver/requirements.txt`
 3. `$ pytest`
 
 ## Endpoints
